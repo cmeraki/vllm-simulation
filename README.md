@@ -1,28 +1,27 @@
-# vllm-simulation
+# vLLM-simulation
 
-This is the accompanying repo to the blog [Throughput is all you need](https://cmeraki.github.io/blogs/throughput.html). The code here simulates a chat application, where a user engages with a LLM powered bot in a multi turn conversation.
+This is the accompanying repo to the blog [Throughput is all you need](https://cmeraki.github.io/blogs/throughput.html). The code here simulates a chat application, where a user engages with an LLM powered bot in a multi-turn conversation.
 
 ## Setup
 
-Step 0: Setup the environment
+### Step 0: Setup the environment
 
 ```bash
-$ git clone https://github.com/cmeraki/vllm-simulation.git
-$ cd vllm-simulation
-$ python -m venv myenv
-$ source myenv/bin/activate
+git clone https://github.com/cmeraki/vllm-simulation.git
+cd vllm-simulation
+python -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
 ```
 
-Step 1: Setup vLLM following the guide [here]().
-
-Step 2: Run the simulation
+### Step 1: Run the simulation
 
 To replicate the experiments from the blog, we would need three running processes.
 
-1. vLLM serving an LLM on an OpenAI compatible server. After installing the setup, run this command in a terminal window:
+1. vLLM serving an LLM on an OpenAI-compatible server. After installing the setup, run this command in a terminal window:
 
 ```bash
-$ python3 <>
+python3 <>
 ```
 
 2. Monitoring setup: To set up the monitoring, follow the steps mentioned [here](https://github.com/vllm-project/vllm/tree/main/examples/production_monitoring). This will be important to visualize the metrics.
@@ -30,8 +29,8 @@ $ python3 <>
 
 ```bash
 python --model_id togethercomputer/Llama-2-7B-32K-Instruct \
-	-r 0.1 -n 100 -l 9 -u 11 \
-	simulation.py
+    -r 0.1 -n 100 -l 9 -u 11 \
+    simulation.py
 ```
 
 You can customize the following arguments to the script.
@@ -50,4 +49,3 @@ options:
   -l L                 Lower bound of conversations in a single chat
   -u U                 Upper bound of conversations in a single chat
 ```
-
