@@ -45,18 +45,17 @@ python simulation.py --model teknium/OpenHermes-2.5-Mistral-7B -n 50 -l 10 -u 11
 You can customize the following arguments to the above script.
 
 ```bash
-python simulation.py -h
 usage: simulation.py [-h] [--model MODEL] [--uri URI] [--port PORT] [-r R] [-n N] [-l L] [-u U]
 
 options:
-  -h, --help           show this help message and exit
-  --model MODEL        Model name that is called for inference
-  --uri URI            URI where the model is available for inference
-  --port PORT          Port where the model is available for inference
-  -r R                 Number of requests per second
-  -n N                 Time unit to run the test for
-  -l L                 Lower bound of conversations in a single chat
-  -u U                 Upper bound of conversations in a single chat
+  -h, --help     show this help message and exit
+  --model MODEL  Model name that is called for inference
+  --uri URI      URI where the model is available for inference
+  --port PORT    Port where the model is available for inference
+  -r R           Number of requests per second
+  -n N           Number of requests to run
+  -l L           Lower bound of conversations in a single chat
+  -u U           Upper bound of conversations in a single chat
 ```
 
 Given that you have run all the steps successfully, you would be able to visualize the metrics at http://localhost.com:3000.
